@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Hamburgueria</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            *{
+                margin: 0;
+                font-family: 'Rethink Sans', sans-serif;    
+            }
+            body{
+                background-color: #F28705;    
+            }
+
+            header{
+                width: 100%;
+                height: 50%;
+                background-color: #262626;
+                z-index: 1;
+            }
+
+            .logo{
+                position: relative;
+                left: 2%;
+                top: 35px;
+                width: 5%;
+            }
+
+            .texto_logo{
+                position: relative;
+                color: #ffa500;
+                left: 8%;
+                top: -20px;
+            }
+
+            .hamburguer-compra img{
+                position: absolute;
+                top: 20%;
+                width: 800px;
+                height: 500px;
+                left: 5%;
+                border-radius: 10px;
+            }
+
+            .hamburguer-compra img:hover{
+                box-shadow: 2px 1px 20px 20px gray; 
+                
+            }
+
+
+            .nome{
+                color: white;
+                position: relative;
+                top: 5%;
+                left: 1%;
+                font-size: 50px;
+            }
+            
+
+            .preco{
+                color: white;
+                position: relative;
+                left: 1%;
+                top: 8%;
+                font-size: 50px;
+            }
+            details{
+                position: absolute;
+                left: 60.5%;
+                top: 50%;
+                display: flex;
+                flex-direction: column;
+                z-index: 5;
+                
+            }
+
+            details[open]{
+                background-color: #262626;
+            }
+
+            details input{
+                justify-content: left;
+                margin: 10px;
+                width: 200px;
+                height: 20px;
+                border-radius: 10px;
+            }
+
+            summary{
+                left: 60%;
+                font-size: 25px;
+                color: red;
+            }
+
+            .informações-do-hamburguer{
+                position: absolute;
+                left: 60%;
+                top: 20%;
+                width: 600px;
+                height: 500px;
+                background-color: #262626;
+                border-radius: 20px;
+            }
+
+            input[type=checkbox] {
+                cursor: pointer;
+            }
+
+            input[type=checkbox]:before {
+                content: "";
+                border-radius: 5px;
+                display: block;
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: 0;
+                left: 0;
+                background-color: white;
+            }
+
+            input[type=checkbox]:checked:after {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 10px;
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                top: 5px;
+                left: 9px;
+            }
+
+            .c1{
+                position: absolute;
+                left: 60.5%;
+                top: 63%;
+            }
+
+            .c2{
+                position: absolute;
+                left: 60.5%;
+                top: 69%;
+            }
+
+            label[for="online"]{
+                position: absolute;
+                color: white;
+                left: 63%;
+                top: 69%;
+            }
+
+            label[for="presencial"]{
+                position: absolute;
+                color: white;
+                left: 63%;
+                top: 63%
+            }
+
+            button{
+                background-color: #3483fa;
+                border-color: transparent;
+                color: #fff;
+                width: 250px;
+                line-height: 3;
+                font-size: 15px;
+                cursor: pointer;
+                position: absolute;
+                left: 60.5%;
+                top: 75%;
+            }
+
+            button:hover{
+                background-color: #0f55be;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <form action="/" method="get">
+                    <input type="image" src="{{ url_for('static', filename='logo_hamburgueria.png') }}" class="logo">
+                </form>
+
+                <h2 class="texto_logo">GrillMaster Burgers</h2>
+            </header>
+
+            <div class="hamburguer-compra">
+                
+                <img src="{{ url_for('static', filename=imagem) }}">
+                
+                
+                <div class="informações-do-hamburguer">
+                    <h2 class="nome">Hamburguer: {{ nome }}</h2>
+
+                    <h2 class="preco">Preço: R$ {{ preco }}</h2>
+                </div>
+
+                <form action="/comprar/{{ nome }}" method="post">
+                    <details>
+                        <summary id="s">Preencer informações de nome e endereço</summary>
+
+                        <input type="text" placeholder="Nome: " name="n" id="id_n" onkeyup="Verificar()">
+        
+                        <input type="text" placeholder="Bairro: " name="b" id="id_b" onkeyup="Verificar2()">
+        
+                        <input type="text" placeholder="Rua: " name="r" id="id_r" onkeyup="Verificar3()">
+        
+                        <input type="text" placeholder="Número residência: " name="nr" id="id_nr" onkeyup="Verificar4()">
+    
+                    </details>
+
+                    <button type="submit">Comprar</button>
+
+                    
+                    <input type="checkbox" name="pagar-presencialmente" class="c1" id="presencial" onclick="Verificar()">
+                    <label for="presencial">Pagar presencialmente</label>
+    
+                    <input type="checkbox" name="pagar-online" class="c2" id="online" onclick="Verificar_2()">
+                    <label for="online">Pagar online</label>
+                </form>
+
+            
+                <script>
+                    function Verificar(){
+                        
+                        const verificar_checked = document.getElementById("presencial");
+
+                        const verificar_checked_02 = document.getElementById("online");
+
+                        if (verificar_checked_02.checked != false ){
+                            verificar_checked_02.checked = false;
+                        } 
+                    
+                    }
+                    
+                    function Verificar_2(){
+                        const verificar_checked = document.getElementById("presencial");
+
+                        const verificar_checked_02 = document.getElementById("online");
+
+                        if (verificar_checked.checked != false ){
+                            verificar_checked.checked = false;
+                        }    
+                    }
+
+                    const input_nome = document.getElementById("id_n");
+
+                    const input_bairro = document.getElementById("id_b");
+
+                    const input_rua = document.getElementById("id_r");
+
+                    const input_n_residencia = document.getElementById("id_nr");
+
+                    const summary = document.getElementById("s")
+                </script>
+            </div>
+        </main> 
+    </body>
+</html>
