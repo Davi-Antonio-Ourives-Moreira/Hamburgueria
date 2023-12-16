@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Hamburgueria</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap" rel="stylesheet">
+
+        <style>
+            html{
+                scroll-behavior: smooth;
+            
+            }
+
+            *{
+                margin: 0;
+                font-family: 'Rethink Sans', sans-serif;    
+            }
+            body{
+                background-color: #F28705;
+                
+            }
+
+            header{
+                width: 100%;
+                height: 50%;
+                background-color: #262626;
+                z-index: 1;
+            }
+
+            a{
+                position: relative;
+                margin: 10px;
+                color: #ffa500;
+                left: 74%;
+                top: -44px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        
+
+            .logo{
+                position: relative;
+                left: 2%;
+                top: 35px;
+                width: 5%;
+            }
+
+            .texto_logo{
+                position: relative;
+                color: #ffa500;
+                left: 8%;
+                top: -20px;
+            }
+
+            .cardapio{
+                position: relative;
+                left: -20%;
+                top: 100px;
+                max-width: 60%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+            }
+
+            .cardapio a{
+                width: 100px;
+                height: 100px;
+                background-color: #262626;
+                display: flex;
+                width: 40%;
+                height: 300px;
+                margin: 10px;
+            }
+
+            .cardapio img{
+                z-index: 2;
+                width: 380px;
+            }
+
+            h6{
+               color: whitesmoke;
+                position: absolute;
+                margin: 20px;
+                z-index: 3;
+                font-size: 50px;
+                justify-content: center;
+            }
+            
+            .title{
+                position: relative;
+                background-color: #262626;
+                color: #ffa500;
+                top: 40px;
+            }
+
+            .title h1{
+                position: relative;
+                left: 33%;
+                font-size: 80px;
+            }
+
+            .cardapio a:hover{
+                box-shadow: 2px 1px 20px 20px gainsboro;            
+            }
+            
+            .title_footer{
+                position: relative;
+                background-color: #262626;
+                color: #ffa500;
+                top: 100px;
+            }
+
+            .title_footer h1{
+                position: relative;
+                left: 33%;
+                font-size: 80px;
+            }
+
+            p{
+                margin: 10px;
+                color: white;
+                margin-left: 10px;
+            }
+
+            .historia{
+                position: absolute;
+                background-color: #262626;
+                width: 500px;            
+                border-radius: 20px;
+                top: 191%;
+                left: 45%;
+                display: flex;
+                flex-direction: column;
+                height: 640px;
+            }
+            
+            .historia_hamburgueria img{
+                position: absolute;
+                border-radius: 20px;
+                height: 640px;
+                top: 191%;
+                left: 16.4%;
+            }
+
+            .historia_hamburgueria{
+                position: relative;
+                left: 4%;
+                top: 120px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <form action="/" method="get">
+                    <input type="image" src="{{ url_for('static', filename='logo_hamburgueria.png') }}" class="logo">
+                </form>
+
+                <h2 class="texto_logo">GrillMaster Burgers</h2>
+
+                <nav>
+                    <a href="/montar_hamburguer">Montar pedido</a>
+
+                    <a onclick="Recomendados()">Recomendados</a>
+
+                    <a onclick="Nossa_Historia()">Nossa história</a>
+                </nav>
+            </header>
+            
+            <div class="title">
+                <h1>Recomendados</h1>
+            </div>
+
+            <div class="cardapio">
+                {% for hamburguer in recomendados %}
+                    <a href="/hamburguer/{{ hamburguer[0] }}">
+                        <img src="{{ url_for('static', filename=hamburguer[2]) }}">
+
+                        <h6>{{ hamburguer[0] }}</h6>
+                    </a>
+                {% endfor %}
+            </div>
+
+            <script>
+                function Recomendados(){
+                    window.scroll(0, 180)
+                }
+
+                function Nossa_Historia(){
+                    window.scroll(0, 1300)
+                }
+            </script>
+
+            <footer>
+                <div class="title_footer">
+                    <h1>Nossa História</h1>
+                </div>
+                
+                <div class="historia_hamburgueria">
+                    
+                    <img src="https://images.adsttc.com/media/images/5d89/19eb/284d/d190/1b00/0068/medium_jpg/11.jpg?1569266148" alt="" srcset="">
+        
+                    <div class="historia">
+                        <p>
+                            <p> 
+                                Movimentadas ruas da cidade, entre o aroma irresistível de carne grelhada e o som reconfortante do churrasco, nasceu a "GrillMaster Burgers". Esta icônica hamburgueria começou como um sonho ardente nas mãos de um verdadeiro mestre da grelha, Carlos Mendes, conhecido carinhosamente </br> como o "Mestre do Churrasco."
+                            </p>
+            
+                            <p>
+                                Carlos, um apaixonado por churrasco desde a juventude, trouxe sua experiência única para o mundo dos hambúrgueres. Com anos de dedicação à arte da grelha, ele decidiu compartilhar seu amor pelo churrasco de uma forma inovadora e deliciosa. Assim, em uma noite quente de verão, nasceu </br> a "GrillMaster Burgers"
+                            </p>
+            
+                            <p>
+                                O "Mestre do Churrasco" trouxe sua perícia para a criação de hambúrgueres que eram verdadeiras obras-primas de sabor. A carne suculenta, grelhada no ponto perfeito, combinada com ingredientes frescos e molhos artesanais, tornaram-se a assinatura dos hambúrgueres da casa.
+                            </p>
+                            
+                            <p> 
+                                "GrillMaster Burgers" não é apenas uma hamburgueria; é um santuário para os amantes da grelha e para todos que apreciam a culinária feita com paixão. As paredes do estabelecimento contam a história de Carlos e sua jornada, desde os primeiros dias como aprendiz de churrasqueiro até se tornar o renomado </br> "GrillMaster".
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
