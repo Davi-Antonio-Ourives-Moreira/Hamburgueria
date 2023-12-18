@@ -12,7 +12,8 @@ class NoCheckboxesFilled(Exception):
     
 
 class NoProductsSelected(Exception):
-   def __init__(self, value_error):
+    def __init__(self, value_error):
         self.value_error = value_error
     def __repr__(self) -> str:
-        return self.value_error 
+        return self.value_error
+    
