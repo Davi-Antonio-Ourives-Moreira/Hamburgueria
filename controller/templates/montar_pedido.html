@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Hamburgueria</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            *{
+                margin: 0;
+                font-family: 'Rethink Sans', sans-serif;  
+            }
+            body{
+                background-color: #F28705;    
+            }
+
+            header{
+                width: 100%;
+                height: 50%;
+                background-color: #262626;
+                z-index: 1;
+            }
+
+            .logo{
+                position: relative;
+                left: 2%;
+                top: 35px;
+                width: 5%;
+            }
+
+            .texto_logo{
+                position: relative;
+                color: #ffa500;
+                left: 8%;
+                top: -20px;
+            }
+
+            .container-montagem{
+                position: absolute;
+                top: 20%;
+                background-color: #262626;
+                width: 1300px;
+                height: 550px;
+                left: 10%;
+                border-radius: 15px;
+            }
+
+            .container-montagem h2{
+                position: relative;
+                left: -35px;
+                top: -100px;
+                color: white;
+                margin: 130px;
+            }
+
+            .titulo-hamburguers-montagem{
+                display: flex;
+                flex-direction: row;
+            }
+
+            .escolhas-pao h3{
+                color: wheat;
+            }
+
+            .escolhas-pao{
+                position: relative;
+                top: -200px;
+                left: 4.5%;
+            }
+
+            .escolhas-carne h3{
+                color: rgb(196, 12, 12)
+            }
+
+            .escolhas-carne{
+                position: relative;
+                left: 20%;
+                top: -515px;
+                left: 30%;
+            }
+
+            .escolhas-queijo h3{
+                color: #ffa500;
+            }
+
+            .escolhas-queijo{
+                position: relative;
+                left: 56.5%;
+                top: -825px;
+            }
+
+            .escolhas-vegetais h3{
+                color: green;
+            }
+
+            h3{
+                margin: 10px;
+            }
+
+            input[type="number"]{
+                text-align: center;
+                margin-left: 13px;
+                width: 100px;
+            }
+
+            .escolhas-vegetais{
+                position: relative;
+                top: -1142px;
+                left: 83.5%;
+            }
+
+            button{
+                position: absolute;
+                top: 82%;
+                left: 78%;
+                background-color: #3483fa;
+                border-color: transparent;
+                color: #fff;
+                width: 250px;
+                line-height: 3;
+                font-size: 15px;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background-color: #0f55be;
+            }
+
+            details{
+                position: absolute;
+                left: 5%;
+                top: 75%;
+                display: flex;
+                flex-direction: column;
+                z-index: 5;
+                
+            }
+
+            details[open]{
+                background-color: #262626;
+                height: 10px;
+            }
+
+            details input{
+                justify-content: left;
+                margin: 10px;
+                width: 200px;
+                height: 20px;
+                border-radius: 10px;
+            }
+
+            summary{
+                font-size: 25px;
+                color: red;
+            }
+            input[type=checkbox] {
+                cursor: pointer;
+            }
+
+            input[type=checkbox]:before {
+                content: "";
+                border-radius: 5px;
+                display: block;
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: 0;
+                left: 0;
+                background-color: white;
+            }
+
+            input[type=checkbox]:checked:after {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 10px;
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                top: 5px;
+                left: 9px;
+            }
+
+            .c1{
+                position: absolute;
+                left: 60.5%;
+                top: 80%;
+            }
+
+            .c2{
+                position: absolute;
+                left: 60.5%;
+                top: 86%;
+            }
+
+            label[for="online"]{
+                position: absolute;
+                color: white;
+                left: 63%;
+                top: 86.5%;
+            }
+
+            label[for="presencial"]{
+                position: absolute;
+                color: white;
+                left: 63%;
+                top: 80.5%
+            }
+
+            .input_rua{
+                position: relative;
+                top: -72.5px;
+                left: 50%;
+            }
+
+            .input_n_residencia{
+                position: relative;
+                left: 50%;
+                top: -72.5px;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <form action="/" method="get">
+                <input type="image" src="{{ url_for('static', filename='logo_hamburgueria.png') }}" class="logo">
+            </form>
+
+            <h2 class="texto_logo">GrillMaster Burgers</h2>
+        </header>
+        
+        <main>
+            <div class="container-montagem">
+                <div class="titulo-hamburguers-montagem">
+                    <h2>Pães</h2>
+
+                    <h2>Carnes</h2>
+
+                    <h2>Queijos</h2>
+
+                    <h2>Vegetais</h2>
+                </div>
+                
+                
+                    <form action="/comprar-montagem" method="post">
+                        
+                        <div class="escolhas-pao">
+                            <h3>Pão de leite</h3>
+                            <input type="number" name="pl" min="0" max="10" step="2" value="0">
+
+                            <h3>Pão vegano</h3>
+                            <input type="number" name="pv" min="0" max="10" step="2" value="0">
+
+                            <h3>Pão brioche</h3>
+                            <input type="number" name="pb" min="0" max="10" step="2" value="0">
+
+                            <h3>Pão de xis</h3>
+                            <input type="number" name="px" min="0" max="10" step="2" value="0">
+
+                            <h3>Pão de hamburguer</h3>
+                            <input type="number" name="ph" min="0" max="10" step="2" value="0">
+                        </div>
+                        
+                        <div class="escolhas-carne">
+                            <h3>Acém</h3>
+                            <input type="number" name="ca" min="0" max="10" value="0">
+
+                            <h3>Alcatra</h3>
+                            <input type="number" name="cal" min="0" max="10" value="0">
+
+                            <h3>Contrafilé</h3>
+                            <input type="number" name="co" min="0" max="10" value="0">
+
+                            <h3>Fraldinha</h3>
+                            <input type="number" name="cf" min="0" max="10" value="0">
+
+                            <h3>Patinho</h3>
+                            <input type="number" name="cp" min="0" max="10" value="0">
+                        </div>
+
+                        <div class="escolhas-queijo">
+                            <h3>Cheddar</h3>
+                            <input type="number" name="qc" min="0" max="10" value="0">
+
+                            <h3>Gorgonzola</h3>
+                            <input type="number" name="qg" min="0" max="10" value="0">
+
+                            <h3>Gruère</h3>
+                            <input type="number" name="qgr" min="0" max="10" value="0">
+
+                            <h3>Requejão de corte</h3>
+                            <input type="number" name="qr" min="0" max="10" value="0">
+
+                            <h3>American cheese</h3>
+                            <input type="number" name="qac" min="0" max="10" value="0">
+
+                        </div>   
+                            
+                    <div class="escolhas-vegetais">
+                        <h3>Alface</h3>
+                        <input type="number" name="va" min="0" max="10" value="0">
+
+                        <h3>Espinafre</h3>
+                        <input type="number" name="ve" min="0" max="10" value="0">
+
+                        <h3>Repolho</h3>
+                        <input type="number" name="vr" min="0" max="10" value="0">
+
+                        <h3>Couve</h3>
+                        <input type="number" name="vc" min="0" max="10" value="0">
+
+                        <h3>Pimentão</h3>
+                        <input type="number" name="vp" min="0" max="10" value="0">
+                    </div>
+
+                    <button type="submit">Comprar</button>
+
+                    <details>
+                        <summary>Preencer informações de nome e endereço!</summary>
+
+                        <input type="text" placeholder="Nome: " name="n" id="id_n">
+        
+                        <input type="text" placeholder="Bairro: " name="b" id="id_b">
+        
+                        <input type="text" placeholder="Rua: " name="r" id="id_r" class="input_rua">
+        
+                        <input type="text" placeholder="Número residência: " name="nr" id="id_nr" class="input_n_residencia">
+                    </details>
+    
+                    <input type="checkbox" name="pagar-presencialmente" class="c1" id="presencial" onclick="Verificar()">
+                    <label for="presencial">Pagar presencialmente</label>
+    
+                    <input type="checkbox" name="pagar-online" class="c2" id="online" onclick="Verificar_2()">
+                    <label for="online">Pagar online</label>
+
+                </form>  
+            </div>
+        </main>
+
+        <script>
+            function Verificar(){
+                            
+                const verificar_checked = document.getElementById("presencial");
+
+                const verificar_checked_02 = document.getElementById("online");
+
+                if (verificar_checked_02.checked != false ){
+                    verificar_checked_02.checked = false;
+                } 
+            
+            }
+            
+            function Verificar_2(){
+                const verificar_checked = document.getElementById("presencial");
+
+                const verificar_checked_02 = document.getElementById("online");
+
+                if (verificar_checked.checked != false ){
+                    verificar_checked.checked = false;
+                }    
+            }
+        </script>
+    </body>
+</html>
