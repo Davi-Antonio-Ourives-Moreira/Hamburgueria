@@ -23,139 +23,760 @@
                 margin: 0;
                 font-family: 'Rethink Sans', sans-serif;    
             }
+
             body{
-                background-color: #F28705;
+                    background-color: #F28705;
                 
-            }
 
-            header{
-                width: 100%;
-                height: 50%;
-                background-color: #262626;
-                z-index: 1;
-            }
+                }
+                header{
+                    width: 100%;
+                    height: 50%;
+                    background-color: #262626;
+                    z-index: 1;
+                    transition: 2s;
+                }
 
-            a{
-                position: relative;
-                margin: 10px;
-                color: #ffa500;
-                left: 74%;
-                top: -44px;
-                text-decoration: none;
-                cursor: pointer;
-            }
+                a{
+                    position: relative;
+                    margin: 10px;
+                    color: #ffa500;
+                    left: 74%;
+                    top: -44px;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            
+
+                .logo{
+                    position: relative;
+                    left: 2%;
+                    top: 35px;
+                    width: 5%;
+                }
+
+                .texto_logo{
+                    position: relative;
+                    color: #ffa500;
+                    left: 8%;
+                    top: -20px;
+                }
+
+                .cardapio{
+                    position: relative;
+                    left: -20%;
+                    top: 100px;
+                    max-width: 60%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                }
+
+                .cardapio a{
+                    display: flex;
+                    width: 40%;
+                    height: 300px;
+                    margin: 10px;
+                }
+
+                .cardapio img{
+                    z-index: 2;
+                    width: 380px;
+                }
+
+                h6{
+                    color: whitesmoke;
+                    position: absolute;
+                    margin: 20px;
+                    z-index: 3;
+                    font-size: 50px;
+                    justify-content: center;
+                }
+                
+                .title{
+                    position: relative;
+                    background-color: #262626;
+                    color: #ffa500;
+                    top: 40px;
+                }
+
+                .title h1{
+                    position: relative;
+                    left: 33%;
+                    font-size: 80px;
+                }
+
+                .cardapio a:hover{
+                    box-shadow: 2px 1px 20px 20px gainsboro;            
+                }
+                
+                .title_footer{
+                    position: relative;
+                    background-color: #262626;
+                    color: #ffa500;
+                    top: 100px;
+                }
+
+                .title_footer h1{
+                    position: relative;
+                    left: 33%;
+                    font-size: 80px;
+                }
+
+                p{
+                    margin: 10px;
+                    color: white;
+                    margin-left: 10px;
+                }
+                .historia{
+                    position: absolute;
+                    background-color: #262626;
+                    width: 500px;            
+                    border-radius: 20px;
+                    top: 191%;
+                    left: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    height: 640px;
+                }
+                
+                .historia_hamburgueria img{
+                    position: absolute;
+                    border-radius: 20px;
+                    height: 640px;
+                    top: 191%;
+                    left: 16.4%;
+                }
+
+                .historia_hamburgueria{
+                    position: relative;
+                    left: 4%;
+                    top: 120px;
+                }
+
+                .nav-list{
+                    display: flex;
+                    align-items: center;
+                }
+
+                .nav-list ul{
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    list-style: none;
+                }
+
+                li{
+                    position: relative;
+                    top: 50px;
+                    left: 15%;
+                    font-size: 30px;
+                    margin: 10px;
+                }
+
+                .menu-bar input{
+                    display: none;
+                    position: relative;
+                    top: -45px;
+                    left: 90%;
+                }
+
+                li a:hover{
+                    background-color: rgb(51, 48, 48);
+                }
+
+                @media screen and (max-width: 1518px){
+                    .nav a{
+                        position: relative;
+                        left: 70%;
+                    }
+
+                    .cardapio a{
+                        margin: 25px;
+                    }
+
+                    .cardapio img{
+                        width: 360px;
+                    }
+
+                    .historia{
+                        position: absolute;
+                        left: 47%;
+                    }
+
+                    
+                }
+
+                @media screen and (max-width: 1434px) {
+                    .cardapio{
+                        position: relative;
+                        left: -14%;
+                    }
+
+                    .cardapio a{
+                        width: 310px;
+                        margin: 10px;
+                        margin-top: 40px;
+
+                    }
+
+                    .cardapio img{
+                        max-width: 310px;
+                    }
+
+                    .historia_hamburgueria img{
+                        position: absolute;
+                        left: 15%;
+                    }
+
+                    .historia_hamburgueria{
+                        position: relative;
+                        left: 10px;
+                    }
+
         
+                }
 
-            .logo{
-                position: relative;
-                left: 2%;
-                top: 35px;
-                width: 5%;
-            }
+                @media screen and (max-width: 1337px) {
+                    .nav a{
+                        position: relative;
+                        left: 66%;
+                    }
 
-            .texto_logo{
-                position: relative;
-                color: #ffa500;
-                left: 8%;
-                top: -20px;
-            }
+                    .title h1{
+                        position: relative;
+                        left: 30%;
+                    }
 
-            .cardapio{
-                position: relative;
-                left: -20%;
-                top: 100px;
-                max-width: 60%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
+                    .cardapio{
+                        position: relative;
+                        left: -18%;
+                    }
 
-            }
+                    .cardapio a{
+                        width: 310px;
+                        margin: 10px;
+                    }
 
-            .cardapio a{
-                width: 100px;
-                height: 100px;
-                background-color: #262626;
-                display: flex;
-                width: 40%;
-                height: 300px;
-                margin: 10px;
-            }
+                    .historia_hamburgueria{
+                        position: relative;
 
-            .cardapio img{
-                z-index: 2;
-                width: 380px;
-            }
+                        left: -1%;
+                    }
 
-            h6{
-               color: whitesmoke;
-                position: absolute;
-                margin: 20px;
-                z-index: 3;
-                font-size: 50px;
-                justify-content: center;
-            }
-            
-            .title{
-                position: relative;
-                background-color: #262626;
-                color: #ffa500;
-                top: 40px;
-            }
+                    .title_footer h1{
+                        position: relative;
+                        left: 30%;
+                    }
 
-            .title h1{
-                position: relative;
-                left: 33%;
-                font-size: 80px;
-            }
+                    .historia{
+                        position: absolute;
+                        left: 50%;
+                    }
 
-            .cardapio a:hover{
-                box-shadow: 2px 1px 20px 20px gainsboro;            
-            }
-            
-            .title_footer{
-                position: relative;
-                background-color: #262626;
-                color: #ffa500;
-                top: 100px;
-            }
+                    
+                }
 
-            .title_footer h1{
-                position: relative;
-                left: 33%;
-                font-size: 80px;
-            }
+                @media  screen and (max-width: 1218px) {
+                    .nav a{
+                        position: relative;
+                        left: 63%;
+                    }
 
-            p{
-                margin: 10px;
-                color: white;
-                margin-left: 10px;
-            }
+                    .cardapio a{
+                        width: 300px;
+                        margin: 23px;
+                    }
 
-            .historia{
-                position: absolute;
-                background-color: #262626;
-                width: 500px;            
-                border-radius: 20px;
-                top: 191%;
-                left: 45%;
-                display: flex;
-                flex-direction: column;
-                height: 640px;
-            }
-            
-            .historia_hamburgueria img{
-                position: absolute;
-                border-radius: 20px;
-                height: 640px;
-                top: 191%;
-                left: 16.4%;
-            }
+                    .cardapio img{
+                        width: 300px;
+                    }
 
-            .historia_hamburgueria{
-                position: relative;
-                left: 4%;
-                top: 120px;
-            }
+                    .cardapio{
+                        position: relative;
+                        left: -23%;
+                    }
+
+                    .title h1{
+                        position: relative;
+                        left: 25.5%;
+                    }
+
+                    .historia_hamburgueria img{
+                        position: absolute;
+                        left: 11%;
+                    }
+
+                    
+                    
+                }
+
+                @media screen and (max-width: 1146px){
+                    .nav a{
+                        position: relative;
+                        left: 60%;
+                    }
+
+                    .cardapio{
+                        position: relative;
+                        left: -38%;
+                        top: 100px;
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+
+                    .cardapio a{
+                        width: 280px;
+                        margin: 30px;
+                    
+                    }
+
+                    .cardapio img{
+                        width: 280px;
+                    }
+
+                
+                    .historia_hamburgueria img{
+                        width: 500px;
+                        height: 300px;
+                        position: absolute;
+                        left: 3%;
+                    }
+
+                    .historia{
+                        width: 500px;
+                        height: 300px;
+                        position: absolute;
+                        left: 54%;
+                    }
+
+                    p{
+                        font-size: 10px;
+                    }
+
+                   
+                }
+
+                @media screen and (max-width: 1058px){
+                    .historia_hamburgueria img{
+                        width: 950px;
+                        height: 500px;
+                        padding: 20px;
+                        border-radius: 35px;
+                    }
+
+                    .historia{
+                        position: absolute;
+                        width: 950px;
+                        height: 500px;
+                        padding: 1px;
+                        left: 44.5px;
+                        top: 580px;
+                        
+                    }
+
+                    .historia p{
+                        font-size: 19px;
+                    }
+
+                    .title_footer h1{
+                        position: relative;
+                        left: 25%;
+
+                    }
+
+                    .cardapio{
+                        position: relative;
+                        left: -41%;
+                    }
+
+                    .historia_hamburgueria{
+                        position: relative;
+                        left: -10px;
+                    }
+
+                    
+                }
+
+                @media  screen and (max-width: 996px) {
+                    .nav a{
+                        position: relative;
+                        left: 55%;
+                    }
+
+                    .logo{
+                        width: 7%;
+                    }
+                    .texto_logo{
+                        position: relative;
+                        left: 11%;
+                    }
+
+                    .cardapio{
+                        position: relative;
+                        left: -45%;
+                    }
+
+                    .title h1{
+                        position: relative;
+                        left: 30%;
+                        font-size: 55px;
+                    }
+
+                    .title_footer h1{
+                        position: relative;
+                        left: 30%;
+                        font-size: 55px;
+                    }
+
+                    .historia_hamburgueria img{
+                        width: 300px;
+                    }
+
+                    .historia{
+                        position:absolute;
+                        top: 20px;
+                        left: 40%;
+                        width: 550px;
+                        
+                    }
+
+                    .historia p{
+                        margin-top: 3px;
+                        font-size: 15px;
+
+                    }
+
+                    
+                }
+
+                @media screen and (max-width: 911px){
+                    .nav a{
+                        position: relative;
+                        left: 50%;
+                    }
+
+                    .historia_hamburgueria img{
+                        position: relative;
+                        left: 32px;
+                    }
+
+                    .historia_hamburgueria{
+                        position: relative;
+                        left: -42px;
+                    }
+
+                    
+                }
+                
+                @media  screen and (max-width: 879px) {
+                    .cardapio img{
+                        width: 200px;
+                        height: 220px;
+                    }
+
+                    .cardapio a{
+                        margin: 20px;
+                        width: 200px;
+                        height: 220px;
+                    }
+
+                    h6{
+                        font-size: xx-large
+                    }
+
+                    .cardapio{
+                        position: relative;
+                        left: -38%;
+                    }
+
+                    .title h1{
+                        position: relative;
+                        left: 28.5%;
+                        font-size: 50px;
+                    }
+
+                    .historia{
+                        position: absolute;
+                        left: 60%;
+                        width: 300px;
+                        height: 600px;
+
+                    }
+
+                    .historia p{
+                        margin-top: -1px;
+                        font-size: 13px;
+                    }
+
+                    .historia_hamburgueria img{
+                        width: 400px;
+                        height: 600px;
+                    }
+
+                    
+                }
+
+                @media screen and (max-width: 815px) {
+                    .nav a{
+                        position: relative;
+                        left: 45%;
+                    }
+
+                    li{
+                        color: wheat;
+                    }
+
+                    
+                }
+
+                @media screen and (max-width: 746px) {
+                    .nav a{
+                        display: none;
+                    }
+
+                    .menu-bar input{
+                        display: flex;
+                    }
+
+                    .title h1{
+                        left: 27%;
+                    }
+
+                    .cardapio{
+                        position: relative;
+                        left: -40%;
+                    }
+
+                    .texto_logo{
+                        position: relative;
+                        top: -10px;
+                    }
+
+                    .title_footer h1{
+                        left: 25%;
+                    }
+
+                    .historia_hamburgueria img{
+                        width: 300px;
+                    }
+
+                    .historia{
+                        position: absolute;
+                        left: 55%;
+                    }
+
+                    .historia_hamburgueria{
+                        position: relative;
+                        left: -12px;
+                    }
+
+                    li{
+                        left: -1%;
+                    }
+                }
+
+                @media screen and (max-width: 655px) {
+                    .title h1{
+                        left: 25%;
+                    }
+
+                    .cardapio{
+                        left: -45%;
+                    }
+
+                    .historia_hamburgueria{
+                        left: -4.5%;
+                    }
+
+                    li{
+                        position: relative;
+                        left: -10%;
+                    }
+                }
+
+                @media  screen and (max-width: 643px) {
+                    .title h1{
+                        left: 22%;
+                    }
+                    
+                    .cardapio{
+                        left: -46.5%;
+                    }
+
+                    .historia_hamburgueria img{
+                        width: 500px;
+                        height: 400px;
+                        left: 83px;
+                    }
+
+                    .historia{
+                        left: 100px;
+                        top: 100%;
+                        width: 500px;
+                        height: 400px;
+                    }
+
+                    .historia_hamburgueria{
+                        left: -5%;
+                    }
+                }
+
+                @media screen and (max-width: 591px) {
+                    .cardapio{
+                        left: -65%;
+                        max-width: 591px;
+                    }
+
+                    .cardapio a{
+                        height: 150px;
+                    }
+
+                    .cardapio img{
+                        height: 150px;
+                    }
+
+                    .title_footer h1{
+                        left: 22%;
+                    }
+
+                    .historia_hamburgueria{
+                        position: relative;
+                        left: -10%;
+                    }
+                }
+
+                @media  screen and (max-width: 545px) {
+                    .logo{
+                        top: 50px;
+                        width: 100px;
+                    }
+
+                    .texto_logo{
+                        top: -18px;
+                        left: 20%;
+                    }
+
+                    .menu-bar input{
+                        top: -55px;
+                    }
+
+                    li{
+                        left: -25%;
+                    }
+
+                    .title h1{
+                        font-size: 35px;
+                        left: 28%;
+                    }
+
+                    .cardapio{
+                        left: -67%;
+                    }
+
+                    .title_footer h1{
+                        font-size: 35px;
+                        left: 28%;
+                    }
+
+                    .historia_hamburgueria{
+                        left: -15%;
+                    }
+                }
+
+                @media screen and (max-width: 526px){
+                    li{
+                        left: -95px;
+                    }
+
+                    .cardapio{
+                        left: -73.5%;
+                    }
+
+                    .historia_hamburgueria{
+                        
+                        left: -100px;
+                    }
+
+                    .historia_hamburgueria img{
+                        left: 80.4px;
+                        width: 480px;
+                    }
+
+                    .historia{
+                        width: 480px;
+                    }
+
+
+                }
+
+                @media screen and (max-width: 483px){
+                    .menu-bar input{
+                        left: 85%;
+                    }
+
+                    li{
+                        left: -32%;
+                    }
+
+                    .cardapio{
+                        left: -365px;
+                    }
+
+
+                    .historia_hamburgueria{
+                        left: -70px;
+                    }
+
+                    .historia_hamburgueria img{
+                        width: 400px;
+                    }
+
+                    .historia{
+                        width: 400px;
+                    }
+
+                    .historia p{
+                        font-size: 12px;
+                    }
+                }
+
+                @media screen and (max-width: 459px){
+                    .cardapio{
+                        left: -380px;
+                        width: 500px;
+                    }
+                }
+
+                 @media screen and (max-width: 438px){
+                    .texto_logo{
+                        left: 25%;
+                    }
+
+                    li{
+                        left: -110px;
+                    }
+
+                    .title h1{
+                        left: 25%;
+                    }
+
+                    .cardapio{
+                        left: -25%;
+                        width: 300px;
+                    }
+
+                    .title_footer h1{
+                        left: 25%;
+                    }
+
+                    .historia_hamburgueria{
+                        left: -18%;
+                    }
+                }
 
         </style>
     </head>
@@ -169,13 +790,27 @@
 
                 <h2 class="texto_logo">GrillMaster Burgers</h2>
 
-                <nav>
+                <nav class="nav">
                     <a href="/montar_hamburguer">Montar pedido</a>
 
                     <a onclick="Recomendados()">Recomendados</a>
 
                     <a onclick="Nossa_Historia()">Nossa história</a>
                 </nav>
+
+                <nav class="nav-bar">
+                    <div class="nav-list">
+                        <ul id="informacoes-menu">
+                            <li><a href="/montar_hamburguer">Montar pedido</a></li>
+                            <li><a onclick="Recomendados()">Recomendados</a></li>
+                            <li><a onclick="Nossa_Historia()">Nossa história</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="menu-bar">
+                    <input type="image" src="{{ url_for('static', filename="menu.svg") }}" class="button-menu" onclick="Menu()">
+                </div>
             </header>
             
             <div class="title">
@@ -186,7 +821,7 @@
                 {% for hamburguer in recomendados %}
                     <a href="/hamburguer/{{ hamburguer[0] }}">
                         <img src="{{ url_for('static', filename=hamburguer[2]) }}">
-
+                    
                         <h6>{{ hamburguer[0] }}</h6>
                     </a>
                 {% endfor %}
@@ -194,12 +829,35 @@
 
             <script>
                 function Recomendados(){
-                    window.scroll(0, 180)
+                    window.scroll(0, 180);
+
                 }
 
                 function Nossa_Historia(){
-                    window.scroll(0, 1300)
+                    window.scroll(0, 1300);
+
                 }
+
+                var aberto = false
+
+                function Menu(){
+                    const menu_button = document.querySelector(".button-menu");
+
+                    const informacoes_menu = document.getElementById("informacoes-menu");
+
+                    aberto = ! aberto;
+
+                    if (aberto){
+                        menu_button.src = "{{ url_for('static', filename='fechar-menu.svg') }}";
+                        menu_button.style.top = "-230px";
+                        informacoes_menu.style.display = "flex";
+                    } else{
+                        menu_button.src = "{{ url_for('static', filename='menu.svg') }}";
+                        menu_button.style.top = "-55px"
+                        informacoes_menu.style.display = "none";
+                    }
+                }
+
             </script>
 
             <footer>
