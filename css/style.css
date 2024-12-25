@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+*{
+    font-family: "Lato", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+/* Corpo */
+body{
+    background: #f5f5f5;
+}
+
+/* Header */
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+
+.logo{
+    position: relative;
+    bottom: 2rem;
+}   
+
+.logo img{
+    width: 9rem;
+}
+
+
+.navbar ul{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar ul li {
+    height: 10px;
+}
+
+.navbar ul li a{
+    color: black;
+    transition: linear .3s;
+}
+
+.navbar ul li a:hover{
+    color: #B7AF99;
+}
+
+#icone-menu-bar{
+    font-size: 2.5rem;
+    width: 55px;
+    text-align: center;
+    border: .1rem solid black;
+    border-radius: .3rem;
+    cursor: pointer;
+    display: none;
+    position: relative;
+}
+
+.menu-bar{
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 90px;
+    z-index: 1001;
+    height: 250px;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.menu-bar nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    left: 10%;
+    top: 30px;
+}
+
+.menu-bar nav ul li a{
+    font-size: 1.5rem;
+    color: #aca79a;
+    border-left: .3rem solid #837f78;
+    padding: 1px 10px;
+}
+
+/* Home */
+
+.home{
+    width: 100%;
+}
+
+.home .content{
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home .content .textos{
+    position: relative;
+    left: 50px;
+    top: 13rem;
+}
+
+.home .content .textos h3{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: rgb(102, 102, 102);
+}
+
+.home .content .textos p{
+    position: relative;
+    top: 20px;
+    color: rgb(148, 148, 148);
+    width: 600px;
+}
+
+.home .content .textos a{
+    display: block;
+    background: transparent;
+    border: .2rem solid #B7AF99;
+    border-radius: 5px;
+    width: 100px;
+    height: 22px;
+    padding: .3rem .3rem;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    color: #B7AF99;
+}
+
+.home .content .textos a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #B7AF99;
+    width: 0%;
+    height: 100%;
+    transition: .3s linear;
+    z-index: -1;
+}
+
+.home .content .textos a:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+.home .content .textos a:hover{
+    color: white;
+}
+
+.home .imagem{
+    position: relative;
+    left: 50px;
+    bottom: 30px;
+}
+
+.home .imagem .hamburguer-ilustracao{
+    width: 42rem;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+
+    50%{
+        transform: translateY(3rem);
+    }
+}
+
+/* Especialidades */
+
+.especialidades{
+    position: relative;
+    top: 80px;
+}
+
+.especialidades h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #837f78;
+}
+
+.especialidades .content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+}
+
+.especialidades .content .especialidade .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border: .2rem solid #B7AF99;
+    width: 330px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+.especialidades .content .especialidade .imagem-ilustrativas-especialidade{
+    position: absolute;
+    width: 335px;
+    height: 0px;
+    z-index: 10;
+    transition: linear 0.2s;
+    border-radius: 5px;
+}
+
+.especialidades .content .especialidade:hover .imagem-ilustrativas-especialidade{
+    height: 235px;
+}
+
+.especialidades .content .especialidade .box .icone-especialidade{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    top: 10px;
+}
+
+.especialidades .content .especialidade .box .titulo-especialidade{
+    color: rgb(95, 94, 94);
+}
+
+.especialidades .content .especialidade .box .texto-especialidade{
+    width: 300px;
+    color: rgb(122, 120, 120);
+}
+
+/* Populares */
+
+.populares{
+    position: relative;
+    top: 190px;
+    width: 100%;
+}
+
+.populares h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #837f78;
+}
+
+.populares .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+}
+
+.populares .content .popular{
+    display: flex;
+    flex-direction: column;
+    border: .2rem solid #cfcaba;
+    align-items: center;
+    border-radius: 5px;
+    width: 330px;
+    height: 300px;
+    gap: 5px;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.populares .content .popular img{
+    position: relative;
+    top: 20px;
+    width: 280px;
+    height: 180px;
+}
+
+.populares .content .popular .preco{
+    background: #cfcaba;
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    height: 30px;
+    z-index: 30;
+    position: relative;
+    bottom: 160px;
+    right: 80px;
+}
+
+.populares .content .popular button{
+    width: 140px;
+    height: 30px;
+    background: transparent;
+    color: #B7AF99;
+    border: .15rem solid #B7AF99;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+
+
+/* Galeria */
+
+.galeria{
+    width: 100%;
+    position: relative;
+    top: 330px;
+}
+
+.galeria h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #837f78;
+}
+
+.galeria .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 30px;
+}
+
+.galeria .content .row{
+    background-color: #fff;
+    height: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galeria .content .row img{
+    width: 330px;
+    height: 250px;
+}
+
+.galeria .content .row .informacoes-galeria{
+    position: absolute;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    height: 290px;
+    display: none;
+    background: #fff;
+    opacity: .75;
+}
+
+.galeria .content .row .informacoes-galeria p{
+    width: 300px;
+    text-align: center;
+    opacity: 1;
+}
+
+.galeria .content .row .informacoes-galeria button{
+    width: 140px;
+    height: 30px;
+    background: transparent;
+    color: #B7AF99;
+    border: .15rem solid #B7AF99;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.galeria .content .row:hover .informacoes-galeria{
+    display: flex;
+}
+
+/* Reviews */
+
+.reviews{
+    position: relative;
+    top: 430px;
+}
+
+.reviews h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #837f78;
+}
+
+.reviews .content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+}
+
+.reviews .content .box-container{
+    width: 320px;
+    height: 280px;
+    border-radius: 5px;
+    box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.reviews .content .box-container .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(36, 35, 35);
+    color: white;
+    height: 260px;
+    width: 300px;
+}
+
+.reviews .content .box-container .box .imagem-review{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    border-radius: 100px;
+    justify-content: center;
+    background: #fff;
+    position: relative;
+    bottom: 50px;
+}
+
+.reviews .content .box-container .box .imagem-review img{
+    width: 80px;
+    clip-path: circle(40px);
+}
+
+.reviews .content .box-container .box h3{
+    position: relative;
+    bottom: 30px;
+    font-size: 1.5rem;   
+}
+
+.reviews .content .box-container .box p{
+    text-align: center;
+}
+
+/* Footer */
+
+footer{
+    width: 100%;
+    background: #c2bcac;
+    position: relative;
+    top: 580px;
+    height: 150px;
+}
+
+footer p{
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 90px;
+    font-size: 1.5rem;
+}
+
+
+/* Botão scroll top */
+.botao-scroll-top{
+    position: fixed;
+    z-index: 1000;
+    top: 10px;
+    left: 95%;
+    top: 80%;
+    display: none;
+}
+
+.botao-scroll-top button{
+    font-size: 2rem;
+    width: 60px;
+    height: 50px;
+    background: #aca79a;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Media Querys */
+
+@media screen and (max-width: 1394px) {
+    .home .imagem .hamburguer-ilustracao{
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 1263px) {
+    .botao-scroll-top{
+        left: 90%;
+    }
+}
+
+@media  screen and (max-width: 1282px) {
+    .home .content .textos{
+        top: 10rem;
+    }
+
+    .home .content .textos h3{
+        font-size: 2rem;
+    }
+
+    .home .content .textos p{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 1157px) {
+    .home .content .textos{
+        top: 7rem;
+    }
+
+    .home .imagem .hamburguer-ilustracao{
+        width: 30rem;
+        position: relative;
+        right: 50px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .home .content .textos{
+        top: 5rem;
+        left: 0;
+        right: 0;
+        
+    }
+
+    .home .content .textos p{
+        text-align: center;
+    }
+
+    .home .content .textos h3{
+        text-align: center;
+    }
+
+    .home .content .textos a{
+        width: 100%;
+    }
+
+    .home .imagem .hamburguer-ilustracao{
+        display: flex;
+        justify-content: center;
+        top: 7rem;
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .botao-scroll-top{
+        left: 85%;
+    }
+
+    .home .content .textos p{
+        font-size: .9rem;
+    }
+
+    .home .content .textos h3{
+        font-size: 1.5rem;
+    }
+
+    .home .content .textos a{
+        width: 480px;
+    }
+
+    .home .imagem{
+        width: 100px;
+        
+    }
+
+    .home .imagem .hamburguer-ilustracao{
+        width: 30rem;
+        position: relative;
+        right: 230px;
+    }
+
+    .links-section{
+        display: none;
+    }
+
+    .logo img{
+        position: relative;
+        right: 100%;
+    }
+
+    #icone-menu-bar{
+        left: 20%;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .home .content .textos p{
+       width: 400px;
+       left: 0px;
+       
+    }
+
+    .home .content .textos a{
+        width: 150px;
+        left: 105px;
+    }
+
+    .home .imagem .hamburguer-ilustracao{
+        width: 25rem;
+        right: 200px;
+    }
+
+    .especialidades{
+        top: 130px;
+    }
+
+    .logo img{
+        right: 100px;
+    }
+}
+
+@media screen and (max-width: 397px) {
+    .botao-scroll-top{
+        left: 78%;
+    }
+
+    .home .content .textos p{
+        left: 10px;
+        width: 300px;
+    }
+
+    .home .content .textos h3{
+        font-size: 1.3rem;
+    }
+
+    .home .content .textos a{
+        left: 70px;
+    }
+
+    .home .imagem .hamburguer-ilustracao{
+        width: 20rem;
+        right: 160px;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    .logo img{
+        right: 70px;
+    }
+
+    #icone-menu-bar{
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 333px) {
+    .especialidades .content .especialidade .box{
+        width: 300px;
+    }
+
+    .especialidades .content .especialidade .imagem-ilustrativas-especialidade{
+        width: 305px;
+    }
+
+    .especialidades .content .especialidade .box .texto-especialidade{
+        text-align: center;
+    }
+
+    .populares .content .popular{
+        width: 300px;
+    }
+
+    .galeria .content .row{
+        width: 300px;
+    }
+
+    .galeria .content .row img{
+        width: 265px;
+    }
+
+    .galeria .content .row .informacoes-galeria{
+        width: 300px;
+    }
+}
